@@ -37,3 +37,12 @@ window.onload = async () => {
       redirect_uri: window.location.origin
     });
   };
+
+  //logout function
+  const logout = () => {
+    auth0.logout({
+      returnTo: window.location.origin
+    });
+  };
+
+  
