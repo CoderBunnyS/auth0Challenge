@@ -20,6 +20,20 @@ const configureClient = async () => {
 //add handler to window tht will make call to initialize application
 window.onload = async () => {
     await configureClient();
+    updateUI();
   }
 
+  //enable & disable buttons depending on auth status
+  const updateUI = async () => {
+    const isAuthenticated = await auth0.isAuthenticated();
   
+    document.getElementById("btn-logout").disabled = !isAuthenticated;
+    document.getElementById("btn-login").disabled = isAuthenticated;
+  };
+
+  //login function
+  const login = async () => {
+    await auth0.loginWithRedirect({
+      redirect_uri: window.location.origin
+    });
+  };
