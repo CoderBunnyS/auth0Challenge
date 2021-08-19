@@ -7,16 +7,82 @@
   </head>
 
   <body>
-    <h2>SPA Authentication Sample</h2>
-    <p>Welcome to our page!</p>
+    
+    
+    <img src="https://d332juqdd9b8hn.cloudfront.net/wp-content/uploads/2019/11/hotbag-lead-895x597.jpg" />
+    <h2>Auth0 Pizza</h2>
+    <p>Log in to place your order</p>
     <button id="btn-login" disabled="true" onclick="login()">Log in</button>
     <button id="btn-logout" disabled="true" onclick="logout()">Log out</button>
 
     <div class="hidden" id="gated-content">
-        <p>
-          You're seeing this content because you're currently
-          <strong>logged in</strong>.
-        </p>
+        <div class="menuBox">
+          Choose your order below:
+          <!-- pizza1 -->
+          <div class="pizzaRow">
+          <div class="pizza">
+            <img src="https://www.acouplecooks.com/wp-content/uploads/2018/10/Margherita-Pizza-018.jpg" alt="margherita pizza">
+              <div class="lazy-image load-spinner img-responsive-bg" title="Margherita" ></div>
+              </img>
+             <h3 class="theme-product-name">
+                    Margherita
+                </h3>
+
+              <div class="theme-product-types">
+                <p class="theme-price-value">
+                    $18.00
+                </p>
+                        <button>
+                            <span class="btn-txt">Order now</span>
+                        </button>   
+                      </div>
+                    </div>               
+
+
+              <!-- Pizza 2 -->
+              <div class="pizza">
+                <img src="https://www.simplyrecipes.com/thmb/HQJVIRwkySb-QiYv6saC9dEjU5A=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-4-82c60893fcad4ade906a8a9f59b8da9d.jpg" alt="pepperoni pizza">
+                  <div class="lazy-image load-spinner img-responsive-bg" title="Pepperoni" ></div>
+                  </img>
+                 <h3 class="theme-product-name">
+                        Pepperoni
+                    </h3>
+                 <!-- <p class="theme-product-desc" data-toggle="tooltip" title="" data-html="true" data-original-title="cheese">cheese</p> -->
+                  <div class="theme-product-types">
+                    <div class="theme-price-value">
+                        $18.00
+                    </div>
+                            <button>
+                                <span class="btn-txt">Order now</span>
+                            </button>   
+                          </div>
+                        </div>               
+
+
+
+                  <!-- Pizza 3 -->
+                  <div class="pizza">
+                    <img src="https://www.countrysidecravings.com/wp-content/uploads/2017/03/three-cheese-pizza-picture.jpg" alt="cheese pizza">
+                      <div class="lazy-image load-spinner img-responsive-bg" title="Margherita" style="display: block; background-image: url(&quot;https://cdn.upmenu.com/static/product-images/d1f9c74c-1890-11e9-860e-525400080321/d26f0291-1890-11e9-860e-525400080321/2/compact/pizza-margherita.jpg&quot;);"></div>
+                      </img>
+                     <h3 class="theme-product-name">
+                            Cheese
+                        </h3>
+                     <!-- <div class="theme-product-desc" data-toggle="tooltip" title="" data-html="true" data-original-title="cheese">cheese</div> -->
+                      <div class="theme-product-types">
+                        <div class="theme-price-value">
+                            $18.00
+                        </div>
+                                <button>
+                                    <span class="btn-txt">Order now</span>
+                                </button>   
+                              </div>
+                            </div>               
+                        </div>
+                      </div>
+                    </div>
+          <!-- <strong>logged in</strong>. -->
+        </h1>
         <label>
           Access token:
           <pre id="ipt-access-token"></pre>
@@ -25,6 +91,10 @@
           User profile:
           <pre id="ipt-user-profile"></pre>
         </label>
+        <button id="btn-call-api" disabled="true" onclick="callApi()">Call Api</button>
+
+<!-- Add a container to hold the response from the call -->
+<pre id="api-call-result"></pre>
       </div>
 
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
