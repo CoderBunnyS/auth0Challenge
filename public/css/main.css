@@ -41,11 +41,11 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border: 5px solid purple
+    
   }
   .pizza {
     justify-content: space-between;
   }
   h3 {
-    color: red;
+    
   }
