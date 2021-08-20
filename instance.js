@@ -11,7 +11,7 @@ const auth0 = await createAuth0Client({
 createAuth0Client({
   domain: 'dev-z5txzw3n.us.auth0.com',
   client_id: 'ohAFsb6pY35XxEU8C0hKsT9bhYCIG1P6',
-  redirect_uri: 'https://authpizza.herokuapp.com/callback'
+  redirect_uri: 'https://authpizza.herokuapp.com/'
 }).then(auth0 => {
   //...
 });
@@ -22,7 +22,7 @@ import { Auth0Client } from '@auth0/auth0-spa-js';
 const auth0 = new Auth0Client({
   domain: 'dev-z5txzw3n.us.auth0.com',
   client_id: 'ohAFsb6pY35XxEU8C0hKsT9bhYCIG1P6',
-  redirect_uri: 'https://authpizza.herokuapp.com/callback'
+  redirect_uri: 'https://authpizza.herokuapp.com/'
 });
 
 //if you do this, you'll need to check the session yourself
