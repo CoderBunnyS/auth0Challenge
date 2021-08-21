@@ -101,7 +101,7 @@ window.onload = async () => {
     //login function
     const login = async () => {
       await auth0.loginWithRedirect({
-        redirect_uri: window.location.origin+'/callback'
+        redirect_uri: window.location.origin
       });
     };
 
