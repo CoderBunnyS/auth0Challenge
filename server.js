@@ -6,8 +6,6 @@ const authConfig = require("./auth_config.json");
 
 const app = express();
 
-
-
 // Serve static assets from the /public folder
 app.use(express.static(join(__dirname, "public")));
 
@@ -17,19 +15,19 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://${authConfig.domain}/.well-known/jwks.json`
+    jwksUri: `https://${authConfig.domain}/.well-known/jwks.json`,
   }),
 
   audience: authConfig.audience,
   issuer: `https://${authConfig.domain}/`,
-  algorithms: ["RS256"]
+  algorithms: ["RS256"],
 });
 
-//create an endpoint thta uses the above middleware to 
+//create an endpoint thta uses the above middleware to
 //protect router from unauthorized requests
 app.get("/api/external", checkJwt, (req, res) => {
   res.send({
-    msg: "Your access token was successfully validated!"
+    msg: "Your access token was successfully validated!",
   });
 });
 
@@ -44,7 +42,7 @@ app.get("/*", (_, res) => {
 });
 
 // Error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   if (err.name === "UnauthorizedError") {
     return res.status(401).send({ msg: "Invalid token" });
   }
