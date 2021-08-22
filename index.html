@@ -9,7 +9,7 @@
   <body>
     
     
-    <img src="https://d332juqdd9b8hn.cloudfront.net/wp-content/uploads/2019/11/hotbag-lead-895x597.jpg" />
+    <img src="https://d332juqdd9b8hn.cloudfront.net/wp-content/uploads/2019/11/hotbag-lead-895x597.jpg" id="headerPic"/>
     <h2>Auth0 Pizza</h2>
     <p>Log in to place your order</p>
     <button id="btn-login" disabled="true" onclick="login()">Log in</button>
@@ -17,7 +17,7 @@
 
     <div class="hidden" id="gated-content">
         <div class="menuBox">
-          Choose your order below:
+          <h1>Choose your pizza below:</h1>
           <!-- pizza1 -->
           <div class="pizzaRow">
           <div class="pizza">
@@ -29,11 +29,11 @@
                 </h3>
 
               <div class="theme-product-types">
-                <p class="theme-price-value">
+                <p class="theme-price-value" id="firstPrice">
                     $18.00
                 </p>
                         <button class="orderButton" id="marg" value="Margherita Pizza" onClick="handleSelection(event)">
-                            <span class="btn-txt" value="Margherita Pizza" onClick="handleSelection(event)">Add to Order</span>
+                            <span class="btn-txt" value="Margherita Pizza">Add to Order</span>
                         </button>   
                       </div>
                     </div>               
@@ -53,7 +53,7 @@
                         $18.00
                     </div>
                             <button class="orderButton" id="pep" value="Pepperoni Pizza" onClick="handleSelection(event)">
-                                <span class="btn-txt" value="Pepperoni Pizza" onClick="handleSelection(event)">Add To Order</span>
+                                <span class="btn-txt" value="Pepperoni Pizza">Add To Order</span>
                             </button>   
                           </div>
                         </div>               
@@ -73,33 +73,33 @@
                         <div class="theme-price-value">
                             $18.00
                         </div>
-                                <button class="orderButton" id="cheese" value="Cheese Pizza" onClick="handleSelection(event)">
-                                    <span class="btn-txt" value="Cheese Pizza" onClick="handleSelection(event)">Add To Order</span>
+                                <button class="orderButton" id="cheese" value="Cheese Pizza" onClick="handleSelection(event)";>
+                                  <span class="btn-txt" value="Cheese Pizza">Add To Order</span>
                                 </button>   
                               </div>
                               
                             </div> 
              
                         </div>
-                        Total Order:
+                        <p id="orderList" >Total Order:</p>
                         <div id="printTotalOrder"></div> 
                       </div>
                       <button id="submitOrder" onclick="submitOrder(totalOrder)">Submit Order</button>
                     </div>
           <!-- <strong>logged in</strong>. -->
-        </h1>
-        <label>
-          Access token:
-          <pre id="ipt-access-token"></pre>
-        </label>
-        <label>
-          User profile:
-          <pre id="ipt-user-profile"></pre>
-        </label>
-        <button id="btn-call-api" disabled="true" onclick="callApi()">Call Api</button>
 
+        <button id="btn-call-api" disabled="true" onclick="callApi()" class="hidden">Call Api</button>
+      </h1 class="hidden">
+      <label class="hidden">
+        Access token:
+        <pre id="ipt-access-token" class="hidden"></pre>
+      </label>
+      <label class="hidden">
+        User profile:
+        <pre id="ipt-user-profile" class="hidden"></pre>
+      </label>
 <!-- Add a container to hold the response from the call -->
-<pre id="api-call-result"></pre>
+<pre id="api-call-result" class="hidden"></pre>
       </div>
 
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>

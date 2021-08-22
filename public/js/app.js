@@ -3,7 +3,7 @@
 let margPizza = document.querySelector("#marg")
 let pepPizza = document.querySelector("#pep")
 let cheesePizza = document.querySelector("#cheese")
-let orderButton = document.querySelectorAll(".orderButton")
+//let orderButton = document.querySelectorAll(".orderButton")
 let printTotalOrder = document.querySelector("#printTotalOrder")
 
 //add variable for order
@@ -134,10 +134,11 @@ const logout = () => {
 };
 
 function handleSelection(event){
-  event.preventDefault();
-  event.stopPropagation();
+   event.preventDefault();
+   event.stopPropagation();
   totalOrder.push(event.path[1].value)
-  printTotalOrder.innerText = ("  " + totalOrder + "  ")  
+  console.log(event.path[1].value)
+  printTotalOrder.innerText = (totalOrder.join(', '))  
 }
 
 function submitOrder(totalOrder){
@@ -154,7 +155,11 @@ function submitOrder(totalOrder){
 })
   .then((response) => response.json())
   .then((json) => console.log(json));
-  alert(`Your order of ${totalOrder} submitted, `)
+  if(confirm(`Your order of ${totalOrder} submitted `)){
+    window.location.reload();  
+}
+  //alert(`Your order of ${totalOrder} submitted, `)
   totalOrder = [];
+  printTotalOrder.innerText = "";
   console.log(totalOrder)
 }

@@ -5,6 +5,12 @@
 label {
   margin-bottom: 10px;
   display: block;
+  
+}
+.orderButton {
+  font-size: 20px;
+  padding: 8px;
+  margin: 20px 0px 20px 0px;
 }
 h2 {
   font-family: Arial, Helvetica, sans-serif;
@@ -16,11 +22,24 @@ h2 {
 }
 img {
   
+  margin-left: -20px;
+  margin-right: 10px;
+  width: 200px;
+  height: 200px;
+  
+}
+#headerPic {
+  
   margin-left: 50%;
   margin-right: 10px;
-  width: 25%;
-  height: 30%;
+  width: 30%;
+  height: 40%;
+  margin-bottom: 40px;
+  margin-top: 30px;
   
+}
+#firstPrice{
+  margin-left: 0px;
 }
 p {
   margin: 20px 20px 0 50px;
@@ -35,17 +54,27 @@ button {
 }
 .menuBox {
   margin: 50px;
-  
+  border-top: 2px solid black;
+  color: #DC3A36;
 }
 .pizzaRow {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  border: 5px solid purple
+
 }
 .pizza {
   justify-content: space-between;
 }
 h3 {
   color: red;
+}
+#orderList {
+  font-size: 30px;
+  margin-left: -30px;
+  margin-top: 40px;
+}
+#printTotalOrder{
+  font-size: 20px;
+  margin-top: 20px;
 }
