@@ -1,3 +1,16 @@
+//const app = require("../../server")
+
+let margPizza = document.querySelector("#marg")
+let pepPizza = document.querySelector("#pep")
+let cheesePizza = document.querySelector("#cheese")
+let orderButton = document.querySelectorAll(".orderButton")
+let printTotalOrder = document.querySelector("#printTotalOrder")
+
+//add variable for order
+let totalOrder = [];
+
+
+
 //add variable to hold Auth0 client object
 let auth0 = null;
 
@@ -119,3 +132,29 @@ const logout = () => {
     returnTo: window.location.origin,
   });
 };
+
+function handleSelection(event){
+  event.preventDefault();
+  event.stopPropagation();
+  totalOrder.push(event.path[1].value)
+  printTotalOrder.innerText = ("  " + totalOrder + "  ")  
+}
+
+function submitOrder(totalOrder){
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'Order Details',
+    body: totalOrder,
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+  alert(`Your order of ${totalOrder} submitted, `)
+  totalOrder = [];
+  console.log(totalOrder)
+}

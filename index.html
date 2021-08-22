@@ -32,8 +32,8 @@
                 <p class="theme-price-value">
                     $18.00
                 </p>
-                        <button>
-                            <span class="btn-txt">Order now</span>
+                        <button class="orderButton" id="marg" value="Margherita Pizza" onClick="handleSelection(event)">
+                            <span class="btn-txt" value="Margherita Pizza" onClick="handleSelection(event)">Add to Order</span>
                         </button>   
                       </div>
                     </div>               
@@ -52,8 +52,8 @@
                     <div class="theme-price-value">
                         $18.00
                     </div>
-                            <button>
-                                <span class="btn-txt">Order now</span>
+                            <button class="orderButton" id="pep" value="Pepperoni Pizza" onClick="handleSelection(event)">
+                                <span class="btn-txt" value="Pepperoni Pizza" onClick="handleSelection(event)">Add To Order</span>
                             </button>   
                           </div>
                         </div>               
@@ -73,13 +73,18 @@
                         <div class="theme-price-value">
                             $18.00
                         </div>
-                                <button >
-                                    <span class="btn-txt">Order now</span>
+                                <button class="orderButton" id="cheese" value="Cheese Pizza" onClick="handleSelection(event)">
+                                    <span class="btn-txt" value="Cheese Pizza" onClick="handleSelection(event)">Add To Order</span>
                                 </button>   
                               </div>
-                            </div>               
+                              
+                            </div> 
+             
                         </div>
+                        Total Order:
+                        <div id="printTotalOrder"></div> 
                       </div>
+                      <button id="submitOrder" onclick="submitOrder(totalOrder)">Submit Order</button>
                     </div>
           <!-- <strong>logged in</strong>. -->
         </h1>

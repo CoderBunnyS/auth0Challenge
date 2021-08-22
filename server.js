@@ -2,6 +2,7 @@ const express = require("express");
 const { join } = require("path");
 const jwt = require("express-jwt");
 const jwksRsa = require("jwks-rsa");
+const jwtAuthz = require('express-jwt-authz');
 const authConfig = require("./auth_config.json");
 
 const app = express();
@@ -39,6 +40,15 @@ app.get("/auth_config.json", (req, res) => {
 // Serve the index page for all other requests
 app.get("/*", (_, res) => {
   res.sendFile(join(__dirname, "index.html"));
+});
+
+//check scopes
+const checkScopes = jwtAuthz([ 'read:orders' ]);
+
+app.get('/api/private-scoped', checkJwt, checkScopes, function(req, res) {
+  res.json({
+    message: 'Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this.'
+  });
 });
 
 // Error handler
