@@ -1,15 +1,11 @@
-//const app = require("../../server")
 
 let margPizza = document.querySelector("#marg")
 let pepPizza = document.querySelector("#pep")
 let cheesePizza = document.querySelector("#cheese")
-//let orderButton = document.querySelectorAll(".orderButton")
 let printTotalOrder = document.querySelector("#printTotalOrder")
 
 //add variable for order
 let totalOrder = [];
-
-
 
 //add variable to hold Auth0 client object
 let auth0 = null;
@@ -110,22 +106,6 @@ const login = async () => {
   });
 };
 
-//show/hide content after auth
-// if (isAuthenticated) {
-//   document.getElementById("gated-content").classList.remove("hidden");
-
-//   document.getElementById(
-//     "ipt-access-token"
-//   ).innerHTML = await auth0.getTokenSilently();
-
-//   document.getElementById("ipt-user-profile").textContent = JSON.stringify(
-//     await auth0.getUser()
-//   );
-
-// } else {
-//   document.getElementById("gated-content").classList.add("hidden");
-// }
-
 //logout function
 const logout = () => {
   auth0.logout({
@@ -133,6 +113,7 @@ const logout = () => {
   });
 };
 
+//add pizza selection to array and update browser
 function handleSelection(event){
    event.preventDefault();
    event.stopPropagation();
@@ -141,6 +122,7 @@ function handleSelection(event){
   printTotalOrder.innerText = (totalOrder.join(', '))  
 }
 
+//submit total order to an API, update browser and alert user
 function submitOrder(totalOrder){
   fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'POST',
@@ -158,7 +140,6 @@ function submitOrder(totalOrder){
   if(confirm(`Your order of ${totalOrder} submitted `)){
     window.location.reload();  
 }
-  //alert(`Your order of ${totalOrder} submitted, `)
   totalOrder = [];
   printTotalOrder.innerText = "";
   console.log(totalOrder)
