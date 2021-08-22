@@ -85,22 +85,24 @@
                         <div id="printTotalOrder"></div> 
                       </div>
                       <button id="submitOrder" onclick="submitOrder(totalOrder)">Submit Order</button>
+                    
+                      <button id="btn-call-api" disabled="true" onclick="callApi()">Call Api</button>
+                    </h1 >
+                    <label>
+                      Access token:
+                      <pre id="ipt-access-token"></pre>
+                    </label>
+                    <label>
+                      User profile:
+                      <pre id="ipt-user-profile"></pre>
+                    </label>
+              <!-- Add a container to hold the response from the call -->
+              <pre id="api-call-result"></pre>
+                    </div>
                     </div>
           <!-- <strong>logged in</strong>. -->
 
-        <button id="btn-call-api" disabled="true" onclick="callApi()">Call Api</button>
-      </h1 >
-      <label>
-        Access token:
-        <pre id="ipt-access-token"></pre>
-      </label>
-      <label>
-        User profile:
-        <pre id="ipt-user-profile"></pre>
-      </label>
-<!-- Add a container to hold the response from the call -->
-<pre id="api-call-result"></pre>
-      </div>
+
 
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
     <script src="js/app.js"></script>

@@ -78,3 +78,16 @@ h3 {
   font-size: 20px;
   margin-top: 20px;
 }
+#ipt-access-token{
+  width: 80%;
+  overflow: scroll;
+  margin-left: 20px;
+}
+#ipt-user-profile{
+  width: 80%;
+  overflow: scroll;
+  margin-left: 20px;
+}
+#api-call-result{
+  margin-left: 20px;
+}
