@@ -62,11 +62,11 @@ app.use(function (err, req, res, next) {
 
 module.exports = app;
 
-// Listen on port 3000
-//app.listen(3000, () => console.log("Application running on port 3000"));
+// Listen on port 9000
+//app.listen(9000, () => console.log("Application running on port 9000"));
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 3000;
+  port = 9000;
 }
 app.listen(port);
